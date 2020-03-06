@@ -2,13 +2,7 @@
 
 ## Overview
 
-This repository will demonstrate an example GitOps workflow with Terraform and Jenkins.
-
-The configuration in this repository was updated and now supports `Terraform v0.12.19`.
-
-Video can be found here:
-
-https://youtu.be/qFjGqPw1NUY
+This repository will demonstrate an example workflow with Terraform and Jenkins.
 
 ## Requirements
 
@@ -16,7 +10,7 @@ https://youtu.be/qFjGqPw1NUY
 * Correct plugins installed on Jenkins
 * GitHub access token
 * AWS credentials
-* S3 bucket
+* S3 bucket (for me "terraform-bucket-tarek")
 
 ## Setup Bucket
 
@@ -25,7 +19,7 @@ You will need to create a bucket and reference the bucket name in the following 
 ```
 terraform {
   backend "s3" {
-    bucket = "terraform-bucket-alex"
+    bucket = "terraform-bucket-tarek"
     key    = "terraform.tfstate"
     region = "us-east-1"
   }
@@ -43,6 +37,4 @@ You can also update the key name to whatever you want your state file to be name
 * [Pipeline Plugin](https://wiki.jenkins.io/display/JENKINS/Pipeline+Plugin)
 * [CloudBees AWS Credentials Plugin](https://wiki.jenkins.io/display/JENKINS/CloudBees+AWS+Credentials+Plugin)
 
-## Questions?
 
-Open an issue.
